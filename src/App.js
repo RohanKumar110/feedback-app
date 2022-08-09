@@ -41,12 +41,12 @@ function App() {
                   feedback={feedback}
                   handleDelete={deleteFeedback}
                 />
+                <AboutIconLink />
               </>
             }
           ></Route>
           <Route path="/about" element={<About />} />
         </Routes>
-        <AboutIconLink />
       </div>
     </Router>
   );
