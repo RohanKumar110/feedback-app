@@ -11,14 +11,9 @@
       "text": "This is feedback item 2"
     },
     {
-      "id": 3,
+      "text": "This is feedback item 3",
       "rating": 8,
-      "text": "This is feedback item 3"
-    },
-    {
-      "text": "This is feedback item 4",
-      "rating": 5,
-      "id": 4
+      "id": 3
     }
   ]
 }
