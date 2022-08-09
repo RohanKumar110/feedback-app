@@ -1,13 +1,25 @@
-import React, { createContext, useState } from "react";
+import React, { createContext, useState, useEffect } from "react";
 
 const FeedbackContext = createContext();
 
 export const FeedbackProvider = ({ children }) => {
+  const BASE_URL = "http://localhost:5000";
+
   const [feedback, setFeedback] = useState([]);
   const [feedbackEdit, setFeedbackEdit] = useState({
     item: {},
     edit: false,
   });
+
+  useEffect(() => {
+    fetchFeedback();
+  }, []);
+
+  const fetchFeedback = async () => {
+    const response = await fetch(`${BASE_URL}/feedback?sort=id&_order=desc`);
+    const data = await response.json();
+    setFeedback(data);
+  };
 
   const addFeedback = (newFeedback) => {
     newFeedback.id = 4;
